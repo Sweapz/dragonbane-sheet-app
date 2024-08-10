@@ -1,1 +1,49 @@
-/* You can add global styles to this file, and also import other style files */
+/* Imports */
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+
+@import "./styles/colours.scss";
+
+/* Globals */
+html,
+body,
+p,
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  height: auto;
+  width: 100%;
+  padding: 20px;
+
+  flex-grow: 1;
+  box-sizing: border-box;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.gap-1 {
+  gap: 1rem;
+}
+
+.space-between {
+  justify-content: space-between;
+}

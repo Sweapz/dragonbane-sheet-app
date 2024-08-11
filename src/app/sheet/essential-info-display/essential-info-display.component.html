@@ -1,0 +1,58 @@
+<div class="row wrap gap-1 space-between mt-10">
+  <!-- Name -->
+  <div class="column">
+    <label for="name">Name</label>
+    <input
+      pInputText
+      id="name"
+      [(ngModel)]="character.name"
+    />
+  </div>
+  <!-- Kin -->
+  <div class="column">
+    <label for="kin">Kin</label>
+    <p-inputGroup id="kin" class="column">
+      <button
+        type="button"
+        pButton
+        (click)="overlay.toggle($event)"
+        [disabled]="!character.kin"
+      >
+        <i class="pi pi-question-circle"></i>
+      </button>
+      <p-overlayPanel #overlay>
+        <div *ngIf="character.kin" class="overlay gap-1">
+          <h2>Description</h2>
+          <span class="row">{{ character.kin.description }}</span>
+          <br />
+          <h3>Movement speed</h3>
+          <span class="row">{{
+            "This kin has a base movement speed of " +
+              character.kin.baseMovement +
+              "."
+          }}</span>
+        </div>
+      </p-overlayPanel>
+      <p-dropdown
+        id="kin"
+        [options]="kinList"
+        [(ngModel)]="character.kin"
+        placeholder="Select Kin"
+        [editable]="true"
+        optionLabel="name"
+        (onChange)="changes($event)"
+      />
+    </p-inputGroup>
+  </div>
+  <div class="column">
+    <label for="profession">Profession</label>
+    <p-dropdown
+      id="profession"
+      [options]="professionList"
+      [(ngModel)]="character.profession"
+      placeholder="Select profession"
+      [editable]="true"
+      (onChange)="changes($event)"
+    />
+  </div>
+</div>

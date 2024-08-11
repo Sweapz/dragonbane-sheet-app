@@ -1,7 +1,9 @@
 .attribute {
   height: 90px;
   width: 81.02px;
+  
   margin: 10px;
+  margin-left: 0;
 
   position: relative;
   box-sizing: border-box;
@@ -12,7 +14,6 @@
     ::ng-deep {
       .p-card { 
         border: 2px solid var(--border-colour);
-        background-color: var(--bg-colour);
 
         height: 100%;
         width: 100%;
@@ -66,11 +67,6 @@
     .p-button {
       font-size: 100%;
       font-family: Arial, Helvetica, sans-serif;
-
-      color: var(--text-colour);
-      border-color: var(--border-colour);
-      background-color: var(--bg-colour);
-      
       pointer-events: none;
 
       padding: 5px 10px;

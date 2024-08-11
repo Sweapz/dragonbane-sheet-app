@@ -1,8 +1,25 @@
-<div class="column">
-  <div class="row wrap gap-1 space-between">
+<div *ngIf="character" class="sheet-root">
+  <div class="row">
+    <app-essential-info-display [character]="character" (changeEmitter)="saveChanges()"></app-essential-info-display>
+  </div>
+  <div class="row">
     <app-attribute-display
-      *ngFor="let attribute of attributes"
-      [attribute]="attribute"
+      [attribute]="character.strength"
+    ></app-attribute-display>
+    <app-attribute-display
+      [attribute]="character.constitution"
+    ></app-attribute-display>
+    <app-attribute-display
+      [attribute]="character.agillity"
+    ></app-attribute-display>
+    <app-attribute-display
+      [attribute]="character.intelligence"
+    ></app-attribute-display>
+    <app-attribute-display
+      [attribute]="character.willpower"
+    ></app-attribute-display>
+    <app-attribute-display
+      [attribute]="character.charisma"
     ></app-attribute-display>
   </div>
 </div>

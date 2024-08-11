@@ -1,20 +1,29 @@
 import { Component } from '@angular/core';
 import { ItemsService } from '../services/items.service';
 import { AttributeDisplayComponent } from './attribute-display/attribute-display.component';
-import { CharacterAttribute } from '../../models/attribute';
 import { CommonModule } from '@angular/common';
+import { CharacterStats } from '../../models/character/character-stats';
+import { CharacterService } from '../services/character.service';
+import { EssentialInfoDisplayComponent } from './essential-info-display/essential-info-display.component';
 
 @Component({
   selector: 'app-sheet',
   standalone: true,
-  imports: [AttributeDisplayComponent, CommonModule],
+  imports: [
+    AttributeDisplayComponent,
+    CommonModule,
+    EssentialInfoDisplayComponent,
+  ],
   templateUrl: './sheet.component.html',
   styleUrl: './sheet.component.scss',
 })
 export class SheetComponent {
-  constructor(private itemsService: ItemsService) {}
+  constructor(
+    private itemsService: ItemsService,
+    private characterService: CharacterService
+  ) {}
 
-  attributes: CharacterAttribute[] = [];
+  character!: CharacterStats;
 
   ngOnInit() {
     // this.itemsService
@@ -22,13 +31,23 @@ export class SheetComponent {
     //   .subscribe((equipment: EquipmentDbo) => {
     // });
 
-    this.attributes = [
-      { title: 'Strength', score: 11, modifier: 5},
-      { title: 'Constitution', score: 12, modifier: 5},
-      { title: 'Agillity', score: 15, modifier: 6},
-      { title: 'Intelligence', score: 15, modifier: 6},
-      { title: 'Willpower', score: 12, modifier: 5},
-      { title: 'Charisma', score: 12, modifier: 5},
-    ]
+    this.characterService.getCharacter().subscribe({
+      next: (data) => {
+        this.character = data.character;
+      },
+      error: (error) => {
+        console.log(error);
+      },
+    });
+  }
+
+  public saveChanges() {
+    console.log('changes');
+    this.characterService.saveCharacter(this.character).subscribe({
+      next: (data) => {},
+      error: (error) => {
+        console.log(error);
+      },
+    });
   }
 }

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { ApiService } from './api.service';
 import { Observable } from 'rxjs';
 import { ItemParams } from '../../models/params';
-import { EquipmentDbo } from '../../models/equipment';
+import { EquipmentDbo } from '../../models/items/equipment';
 
 @Injectable({
   providedIn: 'root',

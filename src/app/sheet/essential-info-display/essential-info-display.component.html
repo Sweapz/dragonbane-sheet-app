@@ -2,11 +2,7 @@
   <!-- Name -->
   <div class="column">
     <label for="name">Name</label>
-    <input
-      pInputText
-      id="name"
-      [(ngModel)]="character.name"
-    />
+    <input pInputText id="name" [(ngModel)]="character.name" />
   </div>
   <!-- Kin -->
   <div class="column">
@@ -15,12 +11,12 @@
       <button
         type="button"
         pButton
-        (click)="overlay.toggle($event)"
+        (click)="kinOverlay.toggle($event)"
         [disabled]="!character.kin"
       >
         <i class="pi pi-question-circle"></i>
       </button>
-      <p-overlayPanel #overlay>
+      <p-overlayPanel #kinOverlay>
         <div *ngIf="character.kin" class="overlay gap-1">
           <h2>Description</h2>
           <span class="row">{{ character.kin.description }}</span>
@@ -54,5 +50,34 @@
       [editable]="true"
       (onChange)="changes($event)"
     />
+  </div>
+  <!-- Kin -->
+  <div class="column">
+    <label for="weakness">Weakness</label>
+    <p-inputGroup id="weakness" class="column">
+      <button
+        type="button"
+        pButton
+        (click)="weaknessOverlay.toggle($event)"
+        [disabled]="!character.weakness"
+      >
+        <i class="pi pi-question-circle"></i>
+      </button>
+      <p-overlayPanel #weaknessOverlay>
+        <div *ngIf="character.kin" class="overlay gap-1">
+          <h2>Description</h2>
+          <span class="row">{{ character.weakness.description }}</span>
+        </div>
+      </p-overlayPanel>
+      <p-dropdown
+        id="kin"
+        [options]="weaknessList"
+        [(ngModel)]="character.weakness"
+        placeholder="Select Weakness"
+        [editable]="true"
+        optionLabel="name"
+        (onChange)="changes($event)"
+      />
+    </p-inputGroup>
   </div>
 </div>

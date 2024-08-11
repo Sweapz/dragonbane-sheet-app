@@ -1,0 +1,133 @@
+.movement-card {
+  height: 120px;
+  width: 100px;
+  
+  margin: 10px;
+  margin-left: 30px;
+
+  position: relative;
+  box-sizing: border-box;
+
+  background-color: none;
+
+  .background {
+    ::ng-deep {
+      .p-card { 
+        border: 2px solid var(--border-colour);
+
+        height: 100%;
+        width: 100%;
+        position: relative;
+      }
+    }
+  }
+
+  .texts {
+    height: 100%;
+    width: 100%;
+    position: absolute; // Position the text absolutely within the parent
+
+    top: 0;
+    z-index: 1; // Ensure it appears on top of the SVG
+
+    pointer-events: none;
+    color: var(--text-colour);
+
+    .title {
+      font-size: 18px;
+      text-align: center;
+      font-family: Arial, Helvetica, sans-serif;
+
+      left: 50%; // Move to the center of the parent
+      position: absolute; // Position the text absolutely within the parent
+      transform: translate(
+        -50%,
+        -50%
+      ); // Offset by half of the element’s width and height
+      margin-top: 13px;
+    }
+  }
+
+  ::ng-deep {
+    .p-button {
+      font-size: 22px;
+      font-family: Arial, Helvetica, sans-serif;
+      pointer-events: none;
+
+      padding: 5px 10px;
+      top: 50%;
+      left: 50%; // Move to the center of the parent
+      transform: translate(
+        -50%,
+        -50%
+      ); // Offset by half of the element’s width and height
+    }
+  }
+}
+
+.damage-card {
+  height: 120px;
+  width: 100px;
+  
+  margin: 10px;
+
+  position: relative;
+  box-sizing: border-box;
+
+  background-color: none;
+
+  .background {
+    ::ng-deep {
+      .p-card { 
+        border: 2px solid var(--border-colour);
+
+        height: 100%;
+        width: 100%;
+        position: relative;
+      }
+    }
+  }
+
+  .texts {
+    height: 100%;
+    width: 100%;
+    position: absolute; // Position the text absolutely within the parent
+
+    top: 0;
+    z-index: 1; // Ensure it appears on top of the SVG
+
+    pointer-events: none;
+    color: var(--text-colour);
+
+    .title {
+      font-size: 18px;
+      text-align: center;
+      text-wrap: nowrap;
+      font-family: Arial, Helvetica, sans-serif;
+
+      left: 50%; // Move to the center of the parent
+      position: absolute; // Position the text absolutely within the parent
+      transform: translate(
+        -50%,
+        -50%
+      ); // Offset by half of the element’s width and height
+      margin-top: 13px;
+    }
+
+    .damage-text {
+      font-size: 18px;
+      text-align: center;
+      text-wrap: nowrap;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--border-colour);
+
+      left: 50%; // Move to the center of the parent
+      position: relative; // Position the text absolutely within the parent
+      transform: translate(
+        -50%,
+        -50%
+      ); // Offset by half of the element’s width and height
+      margin-top: 5px;
+    }
+  }
+}

@@ -1,6 +1,6 @@
 .attribute {
-  height: 90px;
-  width: 81.02px;
+  height: 120px;
+  width: 100px;
   
   margin: 10px;
   margin-left: 0;
@@ -34,7 +34,7 @@
     color: var(--text-colour);
 
     .title {
-      font-size: 13px;
+      font-size: 18px;
       text-align: center;
       font-family: Arial, Helvetica, sans-serif;
 
@@ -48,7 +48,7 @@
     }
 
     .modifier {
-      font-size: 15px;
+      font-size: 21px;
       font-family: Arial, Helvetica, sans-serif;
       font-weight: bold;
 
@@ -65,7 +65,7 @@
 
   ::ng-deep {
     .p-button {
-      font-size: 100%;
+      font-size: 22px;
       font-family: Arial, Helvetica, sans-serif;
       pointer-events: none;
 
@@ -78,12 +78,4 @@
       ); // Offset by half of the element’s width and height
     }
   }
-}
-
-.bg-colour {
-  fill: var(--bg-colour);
-}
-
-.border-colour {
-  fill: var(--border-colour);
 }

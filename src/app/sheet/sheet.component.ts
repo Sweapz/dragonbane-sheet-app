@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { ItemsService } from '../services/items.service';
 import { AttributeDisplayComponent } from './attribute-display/attribute-display.component';
 import { CommonModule } from '@angular/common';
+import { ButtonModule } from 'primeng/button';
+import { CardModule } from 'primeng/card';
 import { CharacterStats } from '../../models/character/character-stats';
 import { CharacterService } from '../services/character.service';
 import { EssentialInfoDisplayComponent } from './essential-info-display/essential-info-display.component';
@@ -12,6 +14,8 @@ import { EssentialInfoDisplayComponent } from './essential-info-display/essentia
   imports: [
     AttributeDisplayComponent,
     CommonModule,
+    ButtonModule,
+    CardModule,
     EssentialInfoDisplayComponent,
   ],
   templateUrl: './sheet.component.html',
@@ -49,5 +53,52 @@ export class SheetComponent {
         console.log(error);
       },
     });
+  }
+
+  public getMovementSpeed(): number {
+    return this.character.kin.baseMovement + this.getAgillityModifier();
+  }
+
+  public getAgilityBonus(): string {
+    switch (true) {
+      case this.character.agillity.score <= 12:
+        return '0';
+      case this.character.agillity.score >= 13 && this.character.agillity.score <= 16:
+        return '1d4';
+      case this.character.agillity.score >= 17 && this.character.agillity.score <= 18:
+        return '1d6';
+        default:
+          throw new Error('Attribute score out of range.')
+    }
+  }
+
+  public getStrengthBonus(): string {
+    switch (true) {
+      case this.character.strength.score <= 12:
+        return '0';
+      case this.character.strength.score >= 13 && this.character.strength.score <= 16:
+        return '1d4';
+      case this.character.strength.score >= 17 && this.character.strength.score <= 18:
+        return '1d6';
+        default:
+          throw new Error('Attribute score out of range.')
+    }
+  }
+
+  private getAgillityModifier(): number {
+    switch (true) {
+      case this.character.agillity.score >= 1 && this.character.agillity.score <= 6:
+        return -4;
+      case this.character.agillity.score >= 7 && this.character.agillity.score <= 9:
+        return -2;
+      case this.character.agillity.score >= 9 && this.character.agillity.score <= 12:
+        return 0;
+      case this.character.agillity.score >= 13 && this.character.agillity.score <= 15:
+        return 2;
+      case this.character.agillity.score >= 16 && this.character.agillity.score <= 18:
+        return 4;
+        default:
+          throw new Error('Attribute score out of range.')
+    }
   }
 }

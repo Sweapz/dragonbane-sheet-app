@@ -11,6 +11,7 @@ import { HpWpDisplayComponent } from './hp-wp-display/hp-wp-display.component';
 import { SkillCollectionDisplayComponent } from './skill-collection-display/skill-collection-display.component';
 import { CheckboxModule } from 'primeng/checkbox';
 import { FormsModule } from '@angular/forms';
+import { TabViewModule } from 'primeng/tabview';
 
 @Component({
   selector: 'app-sheet',
@@ -25,6 +26,7 @@ import { FormsModule } from '@angular/forms';
     EssentialInfoDisplayComponent,
     HpWpDisplayComponent,
     SkillCollectionDisplayComponent,
+    TabViewModule,
   ],
   templateUrl: './sheet.component.html',
   styleUrl: './sheet.component.scss',

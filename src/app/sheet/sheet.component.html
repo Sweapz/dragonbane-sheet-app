@@ -82,7 +82,26 @@
     >
     </app-skill-collection-display>
     <div class="abilities-inventory-card">
-      <p-card class="background"> </p-card>
+      <p-card class="background"> 
+        <p-tabView>
+          <p-tabPanel header="Inventory">
+              <p>
+                  Lorem ipsum dolor sit amet...
+              </p>
+          </p-tabPanel>
+          <p-tabPanel header="Abilities">
+              <p>
+                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium...
+              </p>
+          </p-tabPanel>
+          <p-tabPanel [disabled]="character.profession !== 'Mage'" header="Magic">
+              <p>
+                  At vero eos et accusamus et iusto odio dignissimos...
+              </p>
+          </p-tabPanel>
+      </p-tabView>
+
+      </p-card>
     </div>
   </div>
 </div>

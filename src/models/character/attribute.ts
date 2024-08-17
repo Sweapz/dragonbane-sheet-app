@@ -1,5 +1,7 @@
+import { AttributeEnum } from "../enums/attribute-enum";
+
 export interface CharacterAttribute {
-  title: string;
+  title: AttributeEnum;
   abbreviation: string;
   score: number;
 }

@@ -88,6 +88,10 @@ export class HpWpDisplayComponent {
     this.changeEmitter.emit();
   }
 
+  public deathSaveRolled() {
+    this.changeEmitter.emit();
+  }
+
   private updateHpDisplay() {
     this.hpDisplay[0].value = this.character.currentHp;
     const percentage =

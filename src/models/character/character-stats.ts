@@ -17,6 +17,10 @@ export interface CharacterStats {
   weakness: Weakness;
   deathSaves: DeathSaves;
 
+  // Rests
+  roundRest: boolean;
+  stretchRest: boolean;
+
   // Attributes
   strength: CharacterAttribute;
   constitution: CharacterAttribute;

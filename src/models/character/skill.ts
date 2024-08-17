@@ -1,7 +1,9 @@
+import { AttributeEnum } from "../enums/attribute-enum";
+
 export interface Skill {
   name: string;
   description: string;
-  relatedAttributeAbbreviation: string;
+  relatedAttribute: AttributeEnum;
 
   trained: boolean;
   advancement: boolean;

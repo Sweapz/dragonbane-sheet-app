@@ -184,16 +184,19 @@
               <p-checkbox
                 [(ngModel)]="character.deathSaves.successOne"
                 [binary]="true"
+                (onChange)="deathSaveRolled()"
               />
               <p-checkbox
                 [(ngModel)]="character.deathSaves.successTwo"
                 [binary]="true"
                 [disabled]="!character.deathSaves.successOne"
+                (onChange)="deathSaveRolled()"
               />
               <p-checkbox
                 [(ngModel)]="character.deathSaves.successThree"
                 [binary]="true"
                 [disabled]="!character.deathSaves.successTwo"
+                (onChange)="deathSaveRolled()"
               />
             </div>
             <h4>Fails</h4>
@@ -201,16 +204,19 @@
               <p-checkbox
                 [(ngModel)]="character.deathSaves.failOne"
                 [binary]="true"
+                (onChange)="deathSaveRolled()"
               />
               <p-checkbox
                 [(ngModel)]="character.deathSaves.failTwo"
                 [binary]="true"
                 [disabled]="!character.deathSaves.failOne"
+                (onChange)="deathSaveRolled()"
               />
               <p-checkbox
                 [(ngModel)]="character.deathSaves.failThree"
                 [binary]="true"
                 [disabled]="!character.deathSaves.failTwo"
+                (onChange)="deathSaveRolled()"
               />
             </div>
           </div>

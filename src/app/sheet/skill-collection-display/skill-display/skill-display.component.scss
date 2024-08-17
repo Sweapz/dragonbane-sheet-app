@@ -1,0 +1,33 @@
+.single-skill-card {
+  .skill-row {
+    position: relative;
+    width: 281px;
+
+    .skill-texts {
+      font-size: 14.5px;
+      width: 42px;
+      padding-top: 4px;
+
+      &.skill-name {
+        width: 156px;
+      }
+    }
+
+    ::ng-deep {
+      .p-checkbox {
+        width: 30px;
+      }
+    }
+  }
+
+  ::ng-deep {
+    .p-divider {
+      border-top: none !important;
+      margin: 5px 0px !important;
+    }
+  }
+}
+
+.overlay {
+  width: 25rem;
+}

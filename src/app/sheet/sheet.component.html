@@ -36,27 +36,37 @@
       (conditionChange)="saveChanges()"
     ></app-attribute-display>
 
-    <!-- Movement Speed -->
-    <div class="movement-card">
-      <p-card class="background"> </p-card>
+    <!-- Rests -->
+    <div class="rest-card">
+      <p-card class="background"></p-card>
       <div class="texts">
-        <span class="title">Movement</span>
-        <p-button
-          label="{{ getMovementSpeed() }}"
-          [outlined]="true"
-          size="large"
-        />
+        <span class="title">Rests</span>
+        <div class="column gap-05 center-50">
+          <p-checkbox
+            [(ngModel)]="character.roundRest"
+            [binary]="true"
+            label="Round"
+            (onChange)="saveChanges()"
+          />
+          <p-checkbox
+            [(ngModel)]="character.stretchRest"
+            [binary]="true"
+            label="Stretch"
+            (onChange)="saveChanges()"
+          />
+        </div>
       </div>
     </div>
 
-    <!-- Damage bonus -->
-    <div class="damage-card">
+    <!-- Information -->
+    <div class="info-card">
       <p-card class="background"> </p-card>
       <div class="texts">
-        <span class="title">Dmg Bonus</span>
+        <span class="title">Info</span>
         <div class="column center-50 mt-10">
           <span class="damage-text">{{ "AGL: " + getAgilityBonus() }}</span>
           <span class="damage-text">{{ "STR: " + getStrengthBonus() }}</span>
+          <span class="damage-text">{{ "MVS: " + getMovementSpeed() }}</span>
         </div>
       </div>
     </div>
@@ -64,5 +74,15 @@
     <!-- HP/WP -->
     <app-hp-wp-display [character]="character" (changeEmitter)="saveChanges()">
     </app-hp-wp-display>
+  </div>
+  <div class="row mt-10">
+    <app-skill-collection-display
+      [character]="character"
+      (skillsUpdated)="saveChanges()"
+    >
+    </app-skill-collection-display>
+    <div class="abilities-inventory-card">
+      <p-card class="background"> </p-card>
+    </div>
   </div>
 </div>

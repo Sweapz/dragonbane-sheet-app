@@ -9,6 +9,6 @@
       size="large"
       (onClick)="applyCondition()"
     />
-    <span class="modifier">{{ getAttributeModifier() }}</span>
+    <span class="modifier">{{ utilityService.getAttributeModifier(attribute.score) }}</span>
   </div>
 </div>

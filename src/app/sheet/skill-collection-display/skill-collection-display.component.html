@@ -1,0 +1,261 @@
+<div class="skill-list-card">
+  <p-card class="background">
+    <!-- Weapon skills -->
+    <h3>Weapon Skills</h3>
+    <p-divider />
+    <div class="row wrap space-between">
+      <div class="column wrap skill-column">
+        <div class="row space-between skill-header gap-1">
+          <span class="header-texts">Trn.</span>
+          <span class="header-texts">Mod</span>
+          <span class="header-texts skill-name">Skill</span>
+          <span class="header-texts">Adv.</span>
+        </div>
+        <p-divider />
+        <app-skill-display
+          [skill]="character.axes"
+          [relatedAttributeModifier]="
+            getAttributeMod(character.axes.relatedAttribute)
+          "
+          (skillChanges)="saveSkillChanges()"
+        ></app-skill-display>
+        <app-skill-display
+          [skill]="character.bows"
+          [relatedAttributeModifier]="
+            getAttributeMod(character.bows.relatedAttribute)
+          "
+          (skillChanges)="saveSkillChanges()"
+        ></app-skill-display>
+        <app-skill-display
+          [skill]="character.brawling"
+          [relatedAttributeModifier]="
+            getAttributeMod(character.brawling.relatedAttribute)
+          "
+          (skillChanges)="saveSkillChanges()"
+        ></app-skill-display>
+        <app-skill-display
+          [skill]="character.crossbows"
+          [relatedAttributeModifier]="
+            getAttributeMod(character.crossbows.relatedAttribute)
+          "
+          (skillChanges)="saveSkillChanges()"
+        ></app-skill-display>
+        <app-skill-display
+          [skill]="character.hammers"
+          [relatedAttributeModifier]="
+            getAttributeMod(character.hammers.relatedAttribute)
+          "
+          (skillChanges)="saveSkillChanges()"
+        ></app-skill-display>
+      </div>
+      <p-divider layout="vertical" />
+      <div class="column wrap skill-column">
+        <div class="row space-between skill-header gap-1">
+          <span class="header-texts">Trn.</span>
+          <span class="header-texts">Mod</span>
+          <span class="header-texts skill-name">Skill</span>
+          <span class="header-texts">Adv.</span>
+        </div>
+        <p-divider />
+        <app-skill-display
+          [skill]="character.knives"
+          [relatedAttributeModifier]="
+            getAttributeMod(character.knives.relatedAttribute)
+          "
+          (skillChanges)="saveSkillChanges()"
+        ></app-skill-display>
+        <app-skill-display
+          [skill]="character.slings"
+          [relatedAttributeModifier]="
+            getAttributeMod(character.slings.relatedAttribute)
+          "
+          (skillChanges)="saveSkillChanges()"
+        ></app-skill-display>
+        <app-skill-display
+          [skill]="character.spears"
+          [relatedAttributeModifier]="
+            getAttributeMod(character.spears.relatedAttribute)
+          "
+          (skillChanges)="saveSkillChanges()"
+        ></app-skill-display>
+        <app-skill-display
+          [skill]="character.staves"
+          [relatedAttributeModifier]="
+            getAttributeMod(character.staves.relatedAttribute)
+          "
+          (skillChanges)="saveSkillChanges()"
+        ></app-skill-display>
+        <app-skill-display
+          [skill]="character.swords"
+          [relatedAttributeModifier]="
+            getAttributeMod(character.swords.relatedAttribute)
+          "
+          (skillChanges)="saveSkillChanges()"
+        ></app-skill-display>
+      </div>
+    </div>
+    <h3 class="mt-10">Core Skills</h3>
+    <p-divider />
+    <div class="row wrap space-between">
+      <div class="column wrap skill-column">
+        <div class="row space-between skill-header gap-1">
+          <span class="header-texts">Trn.</span>
+          <span class="header-texts">Mod</span>
+          <span class="header-texts skill-name">Skill</span>
+          <span class="header-texts">Adv.</span>
+        </div>
+        <p-divider />
+        <app-skill-display
+          [skill]="character.acrobatics"
+          [relatedAttributeModifier]="
+            getAttributeMod(character.acrobatics.relatedAttribute)
+          "
+          (skillChanges)="saveSkillChanges()"
+        ></app-skill-display>
+        <app-skill-display
+          [skill]="character.awareness"
+          [relatedAttributeModifier]="
+            getAttributeMod(character.awareness.relatedAttribute)
+          "
+          (skillChanges)="saveSkillChanges()"
+        ></app-skill-display>
+        <app-skill-display
+          [skill]="character.bartering"
+          [relatedAttributeModifier]="
+            getAttributeMod(character.bartering.relatedAttribute)
+          "
+          (skillChanges)="saveSkillChanges()"
+        ></app-skill-display>
+        <app-skill-display
+          [skill]="character.beastLore"
+          [relatedAttributeModifier]="
+            getAttributeMod(character.beastLore.relatedAttribute)
+          "
+          (skillChanges)="saveSkillChanges()"
+        ></app-skill-display>
+        <app-skill-display
+          [skill]="character.bluffing"
+          [relatedAttributeModifier]="
+            getAttributeMod(character.bluffing.relatedAttribute)
+          "
+          (skillChanges)="saveSkillChanges()"
+        ></app-skill-display>
+        <app-skill-display
+          [skill]="character.bushcraft"
+          [relatedAttributeModifier]="
+            getAttributeMod(character.bushcraft.relatedAttribute)
+          "
+          (skillChanges)="saveSkillChanges()"
+        ></app-skill-display>
+        <app-skill-display
+          [skill]="character.crafting"
+          [relatedAttributeModifier]="
+            getAttributeMod(character.crafting.relatedAttribute)
+          "
+          (skillChanges)="saveSkillChanges()"
+        ></app-skill-display>
+        <app-skill-display
+          [skill]="character.evade"
+          [relatedAttributeModifier]="
+            getAttributeMod(character.evade.relatedAttribute)
+          "
+          (skillChanges)="saveSkillChanges()"
+        ></app-skill-display>
+        <app-skill-display
+          [skill]="character.healing"
+          [relatedAttributeModifier]="
+            getAttributeMod(character.healing.relatedAttribute)
+          "
+          (skillChanges)="saveSkillChanges()"
+        ></app-skill-display>
+        <app-skill-display
+          [skill]="character.huntingAndFishing"
+          [relatedAttributeModifier]="
+            getAttributeMod(character.huntingAndFishing.relatedAttribute)
+          "
+          (skillChanges)="saveSkillChanges()"
+        ></app-skill-display>
+      </div>
+      <p-divider layout="vertical" />
+      <div class="column wrap skill-column">
+        <div class="row space-between skill-header gap-1">
+          <span class="header-texts">Trn.</span>
+          <span class="header-texts">Mod</span>
+          <span class="header-texts skill-name">Skill</span>
+          <span class="header-texts">Adv.</span>
+        </div>
+        <p-divider />
+        <app-skill-display
+          [skill]="character.languages"
+          [relatedAttributeModifier]="
+            getAttributeMod(character.languages.relatedAttribute)
+          "
+          (skillChanges)="saveSkillChanges()"
+        ></app-skill-display>
+        <app-skill-display
+          [skill]="character.legends"
+          [relatedAttributeModifier]="
+            getAttributeMod(character.legends.relatedAttribute)
+          "
+          (skillChanges)="saveSkillChanges()"
+        ></app-skill-display>
+        <app-skill-display
+          [skill]="character.performance"
+          [relatedAttributeModifier]="
+            getAttributeMod(character.performance.relatedAttribute)
+          "
+          (skillChanges)="saveSkillChanges()"
+        ></app-skill-display>
+        <app-skill-display
+          [skill]="character.persuasion"
+          [relatedAttributeModifier]="
+            getAttributeMod(character.persuasion.relatedAttribute)
+          "
+          (skillChanges)="saveSkillChanges()"
+        ></app-skill-display>
+        <app-skill-display
+          [skill]="character.riding"
+          [relatedAttributeModifier]="
+            getAttributeMod(character.riding.relatedAttribute)
+          "
+          (skillChanges)="saveSkillChanges()"
+        ></app-skill-display>
+        <app-skill-display
+          [skill]="character.seamanship"
+          [relatedAttributeModifier]="
+            getAttributeMod(character.seamanship.relatedAttribute)
+          "
+          (skillChanges)="saveSkillChanges()"
+        ></app-skill-display>
+        <app-skill-display
+          [skill]="character.sleightOfHand"
+          [relatedAttributeModifier]="
+            getAttributeMod(character.sleightOfHand.relatedAttribute)
+          "
+          (skillChanges)="saveSkillChanges()"
+        ></app-skill-display>
+        <app-skill-display
+          [skill]="character.sneaking"
+          [relatedAttributeModifier]="
+            getAttributeMod(character.sneaking.relatedAttribute)
+          "
+          (skillChanges)="saveSkillChanges()"
+        ></app-skill-display>
+        <app-skill-display
+          [skill]="character.spotHidden"
+          [relatedAttributeModifier]="
+            getAttributeMod(character.spotHidden.relatedAttribute)
+          "
+          (skillChanges)="saveSkillChanges()"
+        ></app-skill-display>
+        <app-skill-display
+          [skill]="character.swimming"
+          [relatedAttributeModifier]="
+            getAttributeMod(character.swimming.relatedAttribute)
+          "
+          (skillChanges)="saveSkillChanges()"
+        ></app-skill-display>
+      </div>
+    </div>
+  </p-card>
+</div>

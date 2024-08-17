@@ -1,0 +1,70 @@
+.skill-list-card {
+  width: 650px;
+  height: 664px;
+
+  margin: 10px;
+  margin-left: 0px;
+
+  position: relative;
+  box-sizing: border-box;
+
+  background-color: none;
+
+  .background {
+    ::ng-deep {
+      .p-card {
+        border: 2px solid var(--border-colour);
+
+        height: 100%;
+        width: 100%;
+        position: relative;
+      }
+    }
+
+    .skill-column {
+      ::ng-deep {
+        .p-divider {
+          margin: 5px 0px !important;
+        }
+      }
+    }
+
+    .skill-header {
+      position: relative;
+      width: 281px;
+
+      .header-texts {
+        width: 35px;
+
+        &.skill-name {
+          width: 176px;
+        }
+      }
+    }
+
+    ::ng-deep {
+      .p-card-body {
+        padding: 5px 10px;
+      }
+    }
+
+    ::ng-deep {
+      .p-card-content {
+        padding: 5px 0px;
+      }
+    }
+
+    ::ng-deep {
+      .p-divider {
+        border-top: 1px solid var(--border-colour);
+        margin: 10px 0px;
+      }
+    }
+    
+    ::ng-deep {
+      .p-divider-vertical {
+        margin: 0px 0px;
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+<div class="single-skill-card">
+  <div class="row space-between skill-row gap-1">
+    <p-checkbox
+      [(ngModel)]="skill.trained"
+      [binary]="true"
+      [disabled]="true"
+    ></p-checkbox>
+    <span class="skill-texts">{{ skill.trained ? relatedAttributeModifier * 2 : relatedAttributeModifier }}</span>
+    <span class="skill-texts skill-name" (click)="skillOverlay.toggle($event)">{{ skill.name }}</span>
+    <p-overlayPanel #skillOverlay>
+      <div *ngIf="skill" class="overlay gap-1">
+        <h2>{{ 'Description ' }}</h2>
+        <span class="row">{{ skill.description }}</span>
+        <br>
+        <span class="row">{{ 'Related attribute: ' + skill.relatedAttribute }}</span>
+
+      </div>
+    </p-overlayPanel>
+    <p-checkbox
+      [(ngModel)]="skill.advancement"
+      [binary]="true"
+      (onChange)="advancementGained()"
+    ></p-checkbox>
+  </div>
+  <p-divider />
+</div>

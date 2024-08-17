@@ -26,25 +26,30 @@
 
     <!-- Movement Speed -->
     <div class="movement-card">
-      <p-card class="background">
-      </p-card>
+      <p-card class="background"> </p-card>
       <div class="texts">
         <span class="title">Movement</span>
-        <p-button label="{{ getMovementSpeed() }}" [outlined]="true" size="large"/>
+        <p-button
+          label="{{ getMovementSpeed() }}"
+          [outlined]="true"
+          size="large"
+        />
       </div>
     </div>
 
     <!-- Damage bonus -->
     <div class="damage-card">
-      <p-card class="background">
-      </p-card>
+      <p-card class="background"> </p-card>
       <div class="texts">
         <span class="title">Dmg Bonus</span>
         <div class="column center-50 mt-10">
-          <span class="damage-text">{{ 'AGL: ' + getAgilityBonus() }}</span>
-          <span class="damage-text">{{ 'STR: ' + getStrengthBonus() }}</span>
+          <span class="damage-text">{{ "AGL: " + getAgilityBonus() }}</span>
+          <span class="damage-text">{{ "STR: " + getStrengthBonus() }}</span>
         </div>
       </div>
     </div>
+
+    <!-- HP/WP -->
+    <app-hp-wp-display [character]="character" (changeEmitter)="saveChanges()"> </app-hp-wp-display>
   </div>
 </div>

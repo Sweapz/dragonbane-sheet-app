@@ -7,6 +7,7 @@ import { CardModule } from 'primeng/card';
 import { CharacterStats } from '../../models/character/character-stats';
 import { CharacterService } from '../services/character.service';
 import { EssentialInfoDisplayComponent } from './essential-info-display/essential-info-display.component';
+import { HpWpDisplayComponent } from './hp-wp-display/hp-wp-display.component';
 
 @Component({
   selector: 'app-sheet',
@@ -17,6 +18,7 @@ import { EssentialInfoDisplayComponent } from './essential-info-display/essentia
     ButtonModule,
     CardModule,
     EssentialInfoDisplayComponent,
+    HpWpDisplayComponent,
   ],
   templateUrl: './sheet.component.html',
   styleUrl: './sheet.component.scss',
@@ -46,7 +48,6 @@ export class SheetComponent {
   }
 
   public saveChanges() {
-    console.log('changes');
     this.characterService.saveCharacter(this.character).subscribe({
       next: (data) => {},
       error: (error) => {

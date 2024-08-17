@@ -1,0 +1,86 @@
+.border-card {
+  height: 120px;
+  width: 454px;
+  flex-grow: 1;
+
+  margin: 10px 0px;
+
+  position: relative;
+  box-sizing: border-box;
+
+  overflow: hidden;
+
+  background-color: none;
+
+  .background {
+    ::ng-deep {
+      .p-card {
+        border: 2px solid var(--border-colour);
+
+        height: 100%;
+        width: 100%;
+        position: relative;
+      }
+    }
+
+    ::ng-deep {
+      .p-card-body {
+        padding: 5px;
+      }
+    }
+
+    ::ng-deep {
+      .p-card-content {
+        padding: 10px;
+      }
+    }
+
+    ::ng-deep {
+      .p-metergroup {
+        gap: 5px;
+      }
+    }
+  }
+}
+
+.overlay {
+  width: 380px;
+
+  ::ng-deep {
+    .p-inputnumber-input {
+      width: 180px;
+    }
+  }
+}
+
+.change-buttons {
+  ::ng-deep {
+    .p-button {
+      padding: 12px 35px;
+    }
+  }
+}
+
+.meters {
+  position: relative;
+  width: 85%;
+}
+
+.death {
+  position: relative;
+  padding-left: 15px;
+
+  ::ng-deep {
+    .p-button {
+      padding: 11px 5px;
+    }
+  }
+}
+
+.death-overlay {
+  width: 320px;
+}
+
+.rolls {
+
+}

@@ -3,7 +3,6 @@
   width: 100px;
   
   margin: 10px;
-  margin-left: 30px;
 
   position: relative;
   box-sizing: border-box;
@@ -70,6 +69,7 @@
   width: 100px;
   
   margin: 10px;
+  margin-left: 0;
 
   position: relative;
   box-sizing: border-box;
@@ -116,7 +116,7 @@
 
     .damage-text {
       font-size: 18px;
-      text-align: center;
+      text-align: left;
       text-wrap: nowrap;
       font-family: Arial, Helvetica, sans-serif;
       color: var(--border-colour);

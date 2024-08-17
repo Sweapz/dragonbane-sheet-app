@@ -1,6 +1,7 @@
 import { Item } from "../items/item";
 import { Ability } from "./ability";
 import { CharacterAttribute } from "./attribute";
+import { DeathSaves } from "./death-saves";
 import { Kin } from "./kin";
 import { Skill } from "./skill";
 import { Weakness } from "./weakness";
@@ -12,8 +13,9 @@ export interface CharacterStats {
   kin: Kin; 
   profession: string; 
   currentHp: number;
-  currentMp: number;
+  currentWp: number;
   weakness: Weakness;
+  deathSaves: DeathSaves;
 
   // Attributes
   strength: CharacterAttribute;

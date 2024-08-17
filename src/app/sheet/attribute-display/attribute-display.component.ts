@@ -25,8 +25,8 @@ export class AttributeDisplayComponent {
         return 6;
       case this.attribute.score >= 17 && this.attribute.score <= 18:
         return 7;
-        default:
-          throw new Error('Attribute score out of range.')
+      default:
+        throw new Error('Attribute score out of range.');
     }
   }
 }

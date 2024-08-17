@@ -1,0 +1,221 @@
+<div class="border-card">
+  <p-card class="background">
+    <div class="row">
+      <div class="column meters">
+        <div (click)="hpOverlay.toggle($event)">
+          <p-meterGroup
+            labelPosition="start"
+            [value]="hpDisplay"
+            [min]="0"
+            [max]="character.constitution.score"
+          >
+            <ng-template pTemplate="label">
+              <div class="flex flex-wrap gap-3">
+                <ng-container
+                  *ngFor="let meterItem of hpDisplay; let index = index"
+                >
+                  <span class="text-secondary text-sm">{{
+                    meterItem.label
+                  }}</span>
+                  <span class="font-bold text-lg">
+                    ({{ meterItem.value }})</span
+                  >
+                </ng-container>
+              </div>
+            </ng-template>
+            <ng-template
+              pTemplate="meter"
+              let-value
+              let-class="class"
+              let-width="width"
+            >
+              <span
+                [class]="class"
+                [style]="{
+                  background: hpDisplay[0].color,
+                  width: hpBarSize
+                }"
+              ></span>
+            </ng-template>
+          </p-meterGroup>
+
+          <p-overlayPanel #hpOverlay>
+            <div class="overlay gap-1">
+              <h4>Hp Management</h4>
+              <br />
+              <div class="row gap-025">
+                <div class="change-buttons">
+                  <button
+                    pButton
+                    type="button"
+                    icon="pi pi-heart"
+                    [outlined]="true"
+                    [disabled]="hpChangeValue === 0"
+                    class="p-button-success"
+                    (click)="hpAdjustment(0)"
+                  ></button>
+                </div>
+
+                <p-inputNumber
+                  inputId="integeronly"
+                  [(ngModel)]="hpChangeValue"
+                  [showButtons]="true"
+                  decrementButtonClass="p-button-secondary"
+                  incrementButtonClass="p-button-secondary"
+                />
+                <div class="change-buttons">
+                  <button
+                    type="button"
+                    pButton
+                    icon="pi pi-times"
+                    [outlined]="true"
+                    [disabled]="hpChangeValue === 0"
+                    class="p-button-danger"
+                    (click)="hpAdjustment(1)"
+                  ></button>
+                </div>
+              </div>
+            </div>
+          </p-overlayPanel>
+        </div>
+        <div (click)="wpOverlay.toggle($event)">
+          <p-meterGroup
+            labelPosition="start"
+            [value]="wpDisplay"
+            [min]="0"
+            [max]="character.willpower.score"
+          >
+            <ng-template pTemplate="label">
+              <div class="flex flex-wrap gap-3">
+                <ng-container
+                  *ngFor="let meterItem of wpDisplay; let index = index"
+                >
+                  <div class="mt-15">
+                    <span class="text-secondary text-sm">{{
+                      meterItem.label
+                    }}</span>
+                    <span class="font-bold text-lg">
+                      ({{ meterItem.value }})</span
+                    >
+                  </div>
+                </ng-container>
+              </div>
+            </ng-template>
+            <ng-template
+              pTemplate="meter"
+              let-value
+              let-class="class"
+              let-width="width"
+            >
+              <span
+                [class]="class"
+                [style]="{
+                  background: wpDisplay[0].color,
+                  width: wpBarSize
+                }"
+              ></span>
+            </ng-template>
+          </p-meterGroup>
+
+          <p-overlayPanel #wpOverlay>
+            <div class="overlay gap-1">
+              <h4>Wp Management</h4>
+              <br />
+              <div class="row gap-025">
+                <div class="change-buttons">
+                  <button
+                    pButton
+                    type="button"
+                    icon="pi pi-heart"
+                    [outlined]="true"
+                    [disabled]="wpChangeValue === 0"
+                    class="p-button-success"
+                    (click)="wpAdjustment(0)"
+                  ></button>
+                </div>
+
+                <p-inputNumber
+                  inputId="integeronly"
+                  [(ngModel)]="wpChangeValue"
+                  [showButtons]="true"
+                  decrementButtonClass="p-button-secondary"
+                  incrementButtonClass="p-button-secondary"
+                />
+                <div class="change-buttons">
+                  <button
+                    type="button"
+                    pButton
+                    icon="pi pi-times"
+                    [outlined]="true"
+                    [disabled]="wpChangeValue === 0"
+                    class="p-button-danger"
+                    (click)="wpAdjustment(1)"
+                  ></button>
+                </div>
+              </div>
+            </div>
+          </p-overlayPanel>
+        </div>
+      </div>
+      <div class="column gap-025 death mt-25">
+        <button
+          type="button"
+          pButton
+          [outlined]="true"
+          (click)="deathSavesOverlay.toggle($event)"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="2em"
+            height="2em"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill="currentColor"
+              d="M12 2a9 9 0 0 0-9 9a8.99 8.99 0 0 0 4 7.47V22h2v-3h2v3h2v-3h2v3h2v-3.54c2.47-1.65 4-4.46 4-7.46a9 9 0 0 0-9-9m-4 9a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2m8 0a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2m-4 3l1.5 3h-3z"
+            />
+          </svg>
+        </button>
+
+        <p-overlayPanel #deathSavesOverlay>
+          <div class="death-overlay gap-1">
+            <h4>Successes</h4>
+            <div class="row rolls gap-025">
+              <p-checkbox
+                [(ngModel)]="character.deathSaves.successOne"
+                [binary]="true"
+              />
+              <p-checkbox
+                [(ngModel)]="character.deathSaves.successTwo"
+                [binary]="true"
+                [disabled]="!character.deathSaves.successOne"
+              />
+              <p-checkbox
+                [(ngModel)]="character.deathSaves.successThree"
+                [binary]="true"
+                [disabled]="!character.deathSaves.successTwo"
+              />
+            </div>
+            <h4>Fails</h4>
+            <div class="row rolls gap-025">
+              <p-checkbox
+                [(ngModel)]="character.deathSaves.failOne"
+                [binary]="true"
+              />
+              <p-checkbox
+                [(ngModel)]="character.deathSaves.failTwo"
+                [binary]="true"
+                [disabled]="!character.deathSaves.failOne"
+              />
+              <p-checkbox
+                [(ngModel)]="character.deathSaves.failThree"
+                [binary]="true"
+                [disabled]="!character.deathSaves.failTwo"
+              />
+            </div>
+          </div>
+        </p-overlayPanel>
+      </div>
+    </div>
+  </p-card>
+</div>

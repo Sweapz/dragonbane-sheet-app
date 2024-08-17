@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { CharacterAttribute } from '../../../models/character/attribute';
@@ -12,6 +12,13 @@ import { CharacterAttribute } from '../../../models/character/attribute';
 })
 export class AttributeDisplayComponent {
   @Input() attribute!: CharacterAttribute;
+  @Input() condition!: boolean;
+  @Output() conditionChange = new EventEmitter<boolean>();
+
+  public applyCondition() {
+    this.condition = !this.condition;
+    this.conditionChange.emit(this.condition);
+  }
 
   public getAttributeModifier(): number {
     switch (true) {

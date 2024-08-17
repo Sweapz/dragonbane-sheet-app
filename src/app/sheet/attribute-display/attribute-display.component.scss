@@ -1,7 +1,7 @@
 .attribute {
   height: 120px;
   width: 100px;
-  
+
   margin: 10px;
   margin-left: 0;
 
@@ -12,7 +12,7 @@
 
   .background {
     ::ng-deep {
-      .p-card { 
+      .p-card {
         border: 2px solid var(--border-colour);
 
         height: 100%;
@@ -30,13 +30,13 @@
     top: 0;
     z-index: 1; // Ensure it appears on top of the SVG
 
-    pointer-events: none;
     color: var(--text-colour);
 
     .title {
       font-size: 18px;
       text-align: center;
       font-family: Arial, Helvetica, sans-serif;
+      pointer-events: none;
 
       left: 50%; // Move to the center of the parent
       position: absolute; // Position the text absolutely within the parent
@@ -51,6 +51,7 @@
       font-size: 21px;
       font-family: Arial, Helvetica, sans-serif;
       font-weight: bold;
+      pointer-events: none;
 
       top: 90%;
       left: 50%; // Move to the center of the parent
@@ -67,7 +68,7 @@
     .p-button {
       font-size: 22px;
       font-family: Arial, Helvetica, sans-serif;
-      pointer-events: none;
+      box-shadow: none;
 
       padding: 5px 10px;
       top: 50%;

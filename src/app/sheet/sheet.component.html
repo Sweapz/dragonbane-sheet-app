@@ -7,21 +7,33 @@
     <!-- Attributes -->
     <app-attribute-display
       [attribute]="character.strength"
+      [(condition)]="character.exhausted"
+      (conditionChange)="saveChanges()"
     ></app-attribute-display>
     <app-attribute-display
       [attribute]="character.constitution"
+      [(condition)]="character.sickly"
+      (conditionChange)="saveChanges()"
     ></app-attribute-display>
     <app-attribute-display
       [attribute]="character.agillity"
+      [(condition)]="character.dazed"
+      (conditionChange)="saveChanges()"
     ></app-attribute-display>
     <app-attribute-display
       [attribute]="character.intelligence"
+      [(condition)]="character.angry"
+      (conditionChange)="saveChanges()"
     ></app-attribute-display>
     <app-attribute-display
       [attribute]="character.willpower"
+      [(condition)]="character.scared"
+      (conditionChange)="saveChanges()"
     ></app-attribute-display>
     <app-attribute-display
       [attribute]="character.charisma"
+      [(condition)]="character.disheartened"
+      (conditionChange)="saveChanges()"
     ></app-attribute-display>
 
     <!-- Movement Speed -->
@@ -50,6 +62,7 @@
     </div>
 
     <!-- HP/WP -->
-    <app-hp-wp-display [character]="character" (changeEmitter)="saveChanges()"> </app-hp-wp-display>
+    <app-hp-wp-display [character]="character" (changeEmitter)="saveChanges()">
+    </app-hp-wp-display>
   </div>
 </div>

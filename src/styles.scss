@@ -48,6 +48,10 @@ app-root {
   flex-direction: column;
 }
 
+.mt-5 {
+  margin-top: 5px;
+}
+
 .mt-10 {
   margin-top: 10px;
 }
@@ -70,6 +74,18 @@ app-root {
 
 .mb-25 {
   margin-bottom: 25px;
+}
+
+.mr-5 {
+  margin-right: 5px;
+}
+
+.ml-5 {
+  margin-left: 5px;
+}
+
+.pl-5 {
+  padding-left: 5px;
 }
 
 .wrap {

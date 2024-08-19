@@ -1,6 +1,4 @@
-import { Skill } from "./skill";
-
 export interface AbilityRequirement {
-  skill: Skill;
+  skillIds: number[];
   requiredLevel: number;
 }

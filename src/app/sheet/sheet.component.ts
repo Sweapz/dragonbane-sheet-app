@@ -12,6 +12,8 @@ import { SkillCollectionDisplayComponent } from './skill-collection-display/skil
 import { CheckboxModule } from 'primeng/checkbox';
 import { FormsModule } from '@angular/forms';
 import { TabViewModule } from 'primeng/tabview';
+import { AbilityDisplayComponent } from './ability-display/ability-display.component';
+import { InventoryDisplayComponent } from './inventory-display/inventory-display.component';
 
 @Component({
   selector: 'app-sheet',
@@ -27,6 +29,8 @@ import { TabViewModule } from 'primeng/tabview';
     HpWpDisplayComponent,
     SkillCollectionDisplayComponent,
     TabViewModule,
+    AbilityDisplayComponent,
+    InventoryDisplayComponent,
   ],
   templateUrl: './sheet.component.html',
   styleUrl: './sheet.component.scss',

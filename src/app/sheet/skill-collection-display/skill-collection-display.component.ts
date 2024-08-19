@@ -18,28 +18,9 @@ export class SkillCollectionDisplayComponent {
   @Input() character!: CharacterStats;
   @Output() skillsUpdated = new EventEmitter<any>();
 
-  constructor(private utilityService: UtilityService) {}
+  constructor(public utilityService: UtilityService) {}
 
   public saveSkillChanges() {
     this.skillsUpdated.emit();
-  }
-
-  public getAttributeMod(attribute: AttributeEnum): number {
-    switch (attribute) {
-      case AttributeEnum.Strength:
-        return this.utilityService.getAttributeModifier(this.character.strength.score);
-      case AttributeEnum.Constitution:
-        return this.utilityService.getAttributeModifier(this.character.constitution.score);
-      case AttributeEnum.Agillity:
-        return this.utilityService.getAttributeModifier(this.character.agillity.score);
-      case AttributeEnum.Intelligence:
-        return this.utilityService.getAttributeModifier(this.character.intelligence.score);
-      case AttributeEnum.Willpower:
-        return this.utilityService.getAttributeModifier(this.character.willpower.score);
-      case AttributeEnum.Charisma:
-        return this.utilityService.getAttributeModifier(this.character.charisma.score);
-      default:
-        throw new Error('Attribute does not exist.');
-    }
   }
 }

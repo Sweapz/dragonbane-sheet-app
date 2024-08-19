@@ -1,0 +1,38 @@
+.ability-header {
+  position: relative;
+  width: 100%;
+
+  .header-texts {
+    font-size: 17px;
+    white-space: nowrap; // Prevents wrapping of text
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &.wp-cost {
+      flex: 1;
+    }
+
+    &.ability-name {
+      flex: 5;
+    }
+
+    &.info-column {
+      flex: 1;
+    }
+  }
+}
+
+.info-buttons {
+  margin-right: 18px;
+  ::ng-deep {
+    .p-button {
+      width: 28px;
+      padding: 3px 3px !important;
+      box-shadow: none !important;
+    }
+  }
+}
+
+.ability-overlay {
+  width: 500px;
+}

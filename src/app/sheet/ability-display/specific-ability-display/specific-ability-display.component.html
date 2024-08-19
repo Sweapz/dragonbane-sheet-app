@@ -1,0 +1,36 @@
+<div class="row space-between ability-header gap-1">
+  <span class="header-texts wp-cost mt-5 pl-5">{{
+    ability.willpowerCost !== 0 ? ability.willpowerCost : '-'
+  }}</span>
+  <span class="header-texts ability-name mt-5">{{
+    toTitleCase(ability.name)
+  }}</span>
+  <div
+    class="row gap-025 flex space-between info-column info-buttons"
+  >
+    <button
+      pButton
+      type="button"
+      icon="pi pi-info-circle"
+      [outlined]="true"
+      (click)="abilityOverlay.toggle($event)"
+    ></button>
+    <p-overlayPanel #abilityOverlay>
+      <div *ngIf="ability" class="ability-overlay gap-1">
+        <h2>{{ 'Description ' }}</h2>
+        <span class="row">{{ ability.description }}</span>
+        <br>
+        <h4>Requires</h4>
+        <span class="row">{{ getAbilityRequirements(ability.requirement) }}</span>
+      </div>
+    </p-overlayPanel>
+    <button
+      pButton
+      type="button"
+      icon="{{ known ? 'pi pi-trash' : 'pi pi-plus' }}"
+      [severity]="known ? 'danger' : 'success'"
+      [outlined]="true"
+      (click)="learningAbilityClicked()"
+    ></button>
+  </div>
+</div>

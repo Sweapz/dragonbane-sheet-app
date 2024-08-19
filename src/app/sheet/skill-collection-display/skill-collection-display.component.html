@@ -16,7 +16,7 @@
         <div *ngFor="let skill of character.skills | slice:0:5">
           <app-skill-display
             [skill]="skill"
-            [relatedAttributeModifier]="getAttributeMod(skill.relatedAttribute)"
+            [relatedAttributeModifier]="utilityService.getAttributeMod(skill.relatedAttribute, character)"
           >
           </app-skill-display>
         </div>
@@ -34,7 +34,7 @@
         <div *ngFor="let skill of character.skills | slice:5:10">
           <app-skill-display
             [skill]="skill"
-            [relatedAttributeModifier]="getAttributeMod(skill.relatedAttribute)"
+            [relatedAttributeModifier]="utilityService.getAttributeMod(skill.relatedAttribute, character)"
           >
           </app-skill-display>
         </div>
@@ -55,7 +55,7 @@
         <div *ngFor="let skill of character.skills | slice:10:20">
           <app-skill-display
             [skill]="skill"
-            [relatedAttributeModifier]="getAttributeMod(skill.relatedAttribute)"
+            [relatedAttributeModifier]="utilityService.getAttributeMod(skill.relatedAttribute, character)"
           >
           </app-skill-display>
         </div>
@@ -73,7 +73,7 @@
         <div *ngFor="let skill of character.skills | slice:20">
           <app-skill-display
             [skill]="skill"
-            [relatedAttributeModifier]="getAttributeMod(skill.relatedAttribute)"
+            [relatedAttributeModifier]="utilityService.getAttributeMod(skill.relatedAttribute, character)"
           >
           </app-skill-display>
         </div>

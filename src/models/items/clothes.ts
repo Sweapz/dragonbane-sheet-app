@@ -1,6 +1,6 @@
-import { Equipment } from "./equipment";
+import { Item } from "./item";
 
-export class Clothes extends Equipment {
+export class Clothes extends Item {
 
 }
 

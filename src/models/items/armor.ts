@@ -1,7 +1,7 @@
-import { Equipment } from "./equipment";
+import { Item } from "./item";
 
-export class Armor extends Equipment {
-
+export class Armor extends Item {
+  public armorRating!: number;
 }
 
 export interface ArmorDbo {

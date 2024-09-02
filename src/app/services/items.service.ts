@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { ApiService } from './api.service';
 import { Observable } from 'rxjs';
 import { ItemParams } from '../../models/params';
-import { EquipmentDbo } from '../../models/items/equipment';
+import { ItemDbo } from '../../models/items/item';
 
 @Injectable({
   providedIn: 'root',
@@ -16,7 +16,7 @@ export class ItemsService {
     });
   }
 
-  public getAllEquipment(url: string): Observable<EquipmentDbo> {
+  public getAllEquipment(url: string): Observable<ItemDbo> {
     return this.apiService.get(url);
   }
 }

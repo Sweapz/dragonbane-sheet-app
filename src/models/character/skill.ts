@@ -8,4 +8,5 @@ export interface Skill {
 
   trained: boolean;
   advancement: boolean;
+  advancementLevel: number;
 }

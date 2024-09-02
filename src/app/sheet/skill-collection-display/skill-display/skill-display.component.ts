@@ -11,6 +11,7 @@ import { CheckboxModule } from 'primeng/checkbox';
 import { FormsModule } from '@angular/forms';
 import { OverlayPanelModule, OverlayPanel } from 'primeng/overlaypanel';
 import { CommonModule } from '@angular/common';
+import { Button, ButtonModule } from 'primeng/button';
 
 @Component({
   selector: 'app-skill-display',
@@ -21,6 +22,7 @@ import { CommonModule } from '@angular/common';
     FormsModule,
     OverlayPanelModule,
     CommonModule,
+    ButtonModule,
   ],
   templateUrl: './skill-display.component.html',
   styleUrl: './skill-display.component.scss',
@@ -33,5 +35,10 @@ export class SkillDisplayComponent {
 
   public advancementGained() {
     this.skillChanges.emit();
+  }
+
+  public advanceSkill() {
+    this.skill.advancementLevel++;
+    this.advancementGained();
   }
 }
